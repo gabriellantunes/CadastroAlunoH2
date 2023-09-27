@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-size: 1.6rem;
+      font-family: "Open Sans", sans-serif;
+      background: #2B3D4F; /* Azul escuro acinzentado */
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+    }
+
+    .login-container {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 30px 50px; /* Diminuí a altura do padding e aumentei a largura */
+      border-radius: 15px;
+      width: 380px; /* Aumentei a largura */
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .input-wrapper {
+      position: relative;
+      margin-bottom: 25px;
+    }
+
+    .input-wrapper::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background-color: #5A2B76; /* Roxo escuro */
+      bottom: 0;
+      left: 50%;
+      transition: all 0.5s;
+    }
+
+    .input-wrapper input:focus +::after {
+      width: 100%;
+      left: 0;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      background: none;
+      outline: none;
+      color: #fff;
+      font-size: 1.2rem;
+      border-bottom: 2px solid #fff;
+      transition: border-color 0.3s;
+    }
+
+    input:focus {
+      border-color: #5A2B76; /* Roxo escuro */
+    }
+
+    button {
+      width: 100%;
+      padding: 15px;
+      border: none;
+      background: #5A2B76; /* Roxo escuro */
+      color: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1.2rem;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #492066; /* Roxo escuro um pouco mais claro para o hover */
+    }
+
+    p {
+      text-align: center;
+    }
+
+    a {
+      color: #5A2B76; /* Roxo escuro */
+      transition: color 0.3s;
+    }
+
+    a:hover {
+      color: #492066; /* Roxo escuro um pouco mais claro para o hover */
+    }
+  </style>
+</head>
+<body>
+<div class="login-container">
+  <div class="login-form">
+    <h2>Login</h2>
+    <form id="credentials-form" action="/processLogin" method="post">
+      <div class="input-wrapper">
+        <input type="email" id="email" name="email" placeholder="Email Address" required>
+      </div>
+      <div class="input-wrapper">
+        <input type="password" id="senha" name="senha" placeholder="Senha" required>
+      </div>
+      <button type="submit">Fazer Login</button>
+    </form>
+    <p>Not a member? <a href="/cadastro">Criar uma conta</a></p>
+  </div>
+</div>
+</body>
+</html>
